@@ -22,7 +22,7 @@ services:
     build:
       context: ./DockerPostgresDB
     ports:
-      - "5432"
+      - "2345:5432"
     restart: always
     volumes:
       - db_volume:/var/lib/postgresql/data

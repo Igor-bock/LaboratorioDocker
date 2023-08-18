@@ -12,11 +12,13 @@
 
     protected override async Task OnInitializedAsync()
     {
-        var m_Consulta = await C_HttpClient.GetAsync("http://10.0.0.86:8000/api/produto/produtos");
+        var m_Consulta = await C_HttpClient.GetAsync("http://localhost:8000/api/produto/produtos");
         m_Consulta.EnsureSuccessStatusCode();
         C_Retorno = await m_Consulta.Content.ReadAsStringAsync();
     }
 }
+
+
 
 
 
