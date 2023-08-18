@@ -1,0 +1,28 @@
+@page "/api"
+
+<h1>Dados da API no container:</h1>
+
+<p>@C_Retorno</p>
+
+@code {
+    [Inject]
+    public HttpClient? C_HttpClient { get; set; }
+
+    public string C_Retorno { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        var m_Consulta = await C_HttpClient.GetAsync("http://10.0.0.86:8000/api/produto/produtos");
+        m_Consulta.EnsureSuccessStatusCode();
+        C_Retorno = await m_Consulta.Content.ReadAsStringAsync();
+    }
+}
+
+
+
+
+
+
+
+
+

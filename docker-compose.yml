@@ -1,0 +1,45 @@
+version: '3.7'
+
+networks:
+  dockerapi-dev:
+    driver: bridge
+
+services:
+  dockerapi:
+    image: dockerimage_api:latest
+    depends_on:
+      - postgresdocker
+    build:
+      context: ./
+      dockerfile: ./DockerAPI/Dockerfile
+    ports:
+      - "8000:80"
+    networks:
+      - dockerapi-dev
+
+  postgresdocker:
+    image: docker_postgres
+    ports:
+      - "5432"
+    restart: always
+    volumes:
+      - db_volume:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=docker_user
+      - POSTGRES_PASSWORD=docker_user
+    networks:
+      - dockerapi-dev
+
+  dockerblazor:
+    image: docker_blazor:latest
+    depends_on:
+      - dockerapi
+    build:
+      context: ./DockerBlazor
+    ports:
+      - "8080:80"
+    networks:
+      - dockerapi-dev
+
+volumes:
+  db_volume:

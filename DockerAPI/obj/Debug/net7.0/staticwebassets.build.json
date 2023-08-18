@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "4hfWRx4YnchlxgKpNUMvhkNYrm9qFuMN+Im+AkUwg0s=",
+  "Source": "DockerAPI_build",
+  "BasePath": "_content/DockerAPI_build",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
