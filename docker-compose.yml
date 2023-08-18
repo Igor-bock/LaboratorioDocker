@@ -18,7 +18,9 @@ services:
       - dockerapi-dev
 
   postgresdocker:
-    image: docker_postgres
+    image: docker_postgres:latest
+    build:
+      context: ./DockerPostgresDB
     ports:
       - "5432"
     restart: always
