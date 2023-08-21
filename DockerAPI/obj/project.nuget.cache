@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "d8eFlUA1tpYS131mUnq/eVQ2BaiU9bXxtSrUqAYwYPeiv8lmXZexXW1mKbjOMnDrgA1BJjujyHyeoJY5IovBaA==",
+  "dgSpecHash": "nvr+Z/RTvHYxnMuhnZcxEaevMTFkkNMNNZThQZN1KVYWo1cCM194M83DPPdwwX9xBiWyrfFVh5tDxz8CHDEegA==",
   "success": true,
-  "projectFilePath": "k:\\Laboratório\\DockerTest\\DockerAPI\\DockerAPI.csproj",
+  "projectFilePath": "K:\\Laboratório\\DockerTest\\DockerAPI\\DockerAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\igor\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.8\\microsoft.aspnetcore.openapi.7.0.8.nupkg.sha512",
     "C:\\Users\\igor\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.10\\microsoft.entityframeworkcore.7.0.10.nupkg.sha512",

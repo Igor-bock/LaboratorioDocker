@@ -8,7 +8,7 @@ services:
   dockerapi:
     image: dockerimage_api:latest
     depends_on:
-      - postgresdocker
+      - postgresvolume
     build:
       context: ./
       dockerfile: ./DockerAPI/Dockerfile
@@ -17,18 +17,16 @@ services:
     networks:
       - dockerapi-dev
 
-  postgresdocker:
-    image: docker_postgres:latest
-    build:
-      context: ./DockerPostgresDB
+  postgresvolume:
+    image: postgres:latest
     ports:
-      - "2345:5432"
+      - "9876:5432"
     restart: always
     volumes:
-      - db_volume:/var/lib/postgresql/data
+      - ./DockerPostgresDB/data:/var/lib/postgresql/data
     environment:
-      - POSTGRES_USER=docker_user
-      - POSTGRES_PASSWORD=docker_user
+      - POSTGRES_PASSWORD=teste
+      - POSTGRES_USER=rei
     networks:
       - dockerapi-dev
 

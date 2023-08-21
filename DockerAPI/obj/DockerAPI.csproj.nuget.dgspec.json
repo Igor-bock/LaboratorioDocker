@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "k:\\Laboratório\\DockerTest\\DockerAPI\\DockerAPI.csproj": {}
+    "K:\\Laboratório\\DockerTest\\DockerAPI\\DockerAPI.csproj": {}
   },
   "projects": {
-    "k:\\Laboratório\\DockerTest\\DockerAPI\\DockerAPI.csproj": {
+    "K:\\Laboratório\\DockerTest\\DockerAPI\\DockerAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "k:\\Laboratório\\DockerTest\\DockerAPI\\DockerAPI.csproj",
+        "projectUniqueName": "K:\\Laboratório\\DockerTest\\DockerAPI\\DockerAPI.csproj",
         "projectName": "DockerAPI_build",
-        "projectPath": "k:\\Laboratório\\DockerTest\\DockerAPI\\DockerAPI.csproj",
+        "projectPath": "K:\\Laboratório\\DockerTest\\DockerAPI\\DockerAPI.csproj",
         "packagesPath": "C:\\Users\\igor\\.nuget\\packages\\",
-        "outputPath": "k:\\Laboratório\\DockerTest\\DockerAPI\\obj\\",
+        "outputPath": "K:\\Laboratório\\DockerTest\\DockerAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\DevExpress 23.1\\Components\\Offline Packages",

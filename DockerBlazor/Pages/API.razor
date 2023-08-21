@@ -8,15 +8,19 @@
     [Inject]
     public HttpClient? C_HttpClient { get; set; }
 
-    public string C_Retorno { get; set; }
+    public string? C_Retorno { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
-        var m_Consulta = await C_HttpClient.GetAsync("http://localhost:8000/api/produto/produtos");
-        m_Consulta.EnsureSuccessStatusCode();
+        var m_Consulta = await C_HttpClient!.GetAsync("http://localhost:8000/api/produto/produtos");
+        m_Consulta!.EnsureSuccessStatusCode();
         C_Retorno = await m_Consulta.Content.ReadAsStringAsync();
     }
 }
+
+
+
+
 
 
 

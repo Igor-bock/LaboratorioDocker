@@ -1,0 +1,47 @@
+@page "/jogo"
+
+<h1>Jogos:</h1>
+
+<EditForm Model="C_Jogo" OnValidInput="Salvar()">
+    <input type="text" @bind-value="C_Jogo!.ds_nome" />
+
+    <input type="button" value="Salvar" />
+</EditForm>
+
+@{
+    <ul>
+        foreach (var item in C_Jogos)
+        {
+        <li>item.ds_nome</li>
+        }
+    </ul>
+}
+
+@code {
+    [Inject]
+    public HttpClient? C_HttpClient { get; set; }
+    [Inject]
+    public DockerBlazor.Services.ServiceGeral? C_Service { get; set; }
+
+    public DockerBlazor.Models.Jogo? C_Jogo { get; set; } = new DockerBlazor.Models.Jogo();
+    public IEnumerable<DockerBlazor.Models.Jogo>? C_Jogos { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        var m_Consulta = await C_HttpClient!.GetAsync("http://localhost:8000/api/jogo");
+        m_Consulta!.EnsureSuccessStatusCode();
+        C_Jogos = await m_Consulta!.Content!.ReadFromJsonAsync<IEnumerable<DockerBlazor.Models.Jogo>>();
+    }
+
+    public async Task Salvar()
+    {
+        await C_Service!.CM_Inserir(C_Jogo!);
+    }
+}
+
+
+
+
+
+
+

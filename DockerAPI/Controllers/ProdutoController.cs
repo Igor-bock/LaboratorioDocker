@@ -34,7 +34,7 @@ public class ProdutoController : Controller
         }
         catch (Exception ex)
         {
-            return $"Um erro aconteceu: {ex.Message} \nStackTrace: {ex.StackTrace} \nInnerException: {ex.InnerException.Message}";
+            return $"Um erro aconteceu: {ex!.Message!} \nStackTrace: {ex!.StackTrace!} \nInnerException: {ex!.InnerException!.Message!}";
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using DockerAPI.Models;
 
 namespace DockerAPI.Context;
 
@@ -11,8 +12,9 @@ public class TesteDbContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder options)
     {
-        options.UseNpgsql("HOST=10.0.0.86;PORT=5435;DATABASE=temporario;USER ID=docker_user;PASSWORD=docker_user");
+        options.UseNpgsql("HOST=localhost;PORT=9876;DATABASE=postgres;USER ID=rei;PASSWORD=teste");
     }
 
     public DbSet<Produto> Produtos { get; set; }
+    public DbSet<Jogo> Jogos { get; set; }
 }
